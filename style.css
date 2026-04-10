@@ -1,0 +1,24 @@
+.header-pic {
+    width: 250px; /* Small and cute */
+    height: 1;
+    display: block; /* Helps with centering */
+    margin: 0 auto 0px; /* Centers the cat and adds space below it */
+    
+    /* THE ANIMATION */
+    animation: cat-dance 2s infinite ease-in-out;
+}
+
+@keyframes cat-dance {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-15px) rotate(-8deg); /* Jumps up & tilts left */
+    }
+    50% {
+        transform: translateY(0) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-15px) rotate(8deg); /* Jumps up & tilts right */
+    }
+}

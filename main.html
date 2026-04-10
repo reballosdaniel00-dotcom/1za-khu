@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Happy Monthsary</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fdf0a6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            margin-top: 0px;
+        }
+
+        .title-text {
+            color: #ff4d6d;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Tab Logic */
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            box-shadow: yellow;
+        }
+        .tabs:hover {
+            color: yellow;
+
+        }
+
+        .tab-link {
+            padding: 10px;
+            cursor: pointer;
+            color: #888;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+
+        .tab-link:hover {
+            color: #ff4d6d;
+        }
+
+        /* Hide content by default */
+        .tab-content {
+            display: none;
+            padding: 20px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Show content when active */
+        .active-content {
+            display: block;
+        }
+
+        .active-tab {
+            color: #ff4d6d;
+            border-bottom: 3px solid #ff4d6d;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img class="header-pic"src="Cat.gif" alt="Cute Cat">
+    <p class="title-text"  style="margin-top: 0px;">HAPPY FIRST MONTHSARY</p>
+
+    <!-- Navigation Tabs -->
+    <div class="tabs">
+        <div class="tab-link active-tab" onclick="openTab(event, 'Journey')">Our Journey</div>
+        <div class="tab-link" onclick="openTab(event, 'Memories')">Plans</div>
+    </div>
+
+    <!-- Content Sections -->
+    <div id="Journey" class="tab-content active-content">
+        <h3 style="background-color: rgba(248, 248, 15, 0.747);border-radius: 15px;">MY MESSAGES FOR MY BABYY</h3>
+        <p style="background-color: rgba(0, 0, 0, 0.062);border-radius: 10px;">This is  just a simple message baby. It’s been 30 days since you said yes to me. But its been a while since we met, Its been a while since the day that i confess to you and since the day that we first chat and bonding together. I never really expected you to be mine never really the thoughts never came to me that one day i'll be the one holding you the one whos going to hear sweet words that came out of your mouth:].And if ever I was going to put back in time where to choose if i'm going to pursue you There's no hesitation no doubt I will pursue you, choose you because I know my girl, I know this girl, I know you and to choose you is not going to be a mistake nor biggest regret or just a lesson in my life. I see you not just any other girl there is no other personality like youu that i've met before you are like, I really cant explain mostly something unique personality with that weird sometimes sweet and caring what else and the side of yours that u can only show to me hmm. Now I know my soft,crybaby girl not in a rude way of saying that but i'm just saying yes i do know u now. there's alot of things i want to do with uu and only youu And so i hope we can be together more and more years without those breakups and both of us will not get hurt:[ to not get reason for breakups and so on.
+ And I hope we still have a lot of memories to do and to make with each other, I see you as a lifetime not just a temporary and so i hope u see  me as  i do see you, but who knows right we cant hold are future, but i know we can make it, we can change whats in the future make it with our own and became succesful and if  that day comes i hope you are still wiht me and i am  still with you holding  each others throughout the years. watching each other became succesful in life and  make  the dreams came true, idk whats going to be in the future, or even tomorrow soo lets just enjoy this, enjoy what we have right now, and hoping we can make this longer than  just a month without both of us giving  up</p>
+ </div>
+    <div id="Memories" class="tab-content">
+
+        <h3>Our Plans</h3>
+        <p>we  have done so many  things as this age so whats next maybe in the future  we can be together?, but for know we need to  be  in a college and to  graduate  in  college  and so that  our real journey will begin more hard  working and lets not forget that we need to focus on studies and also for us we cna make it at the same time not just leaving each others behind, my plan is simple for now  to be wiht my baby until the very end of the graduation  thats all for now.  Hanggang dito muna babyy,  HAPPY 1ST MONTHSARYYY!! <b>Aishiteru.</b></p>
+    </div>
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        
+        // Hide all content
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Remove active class from all tabs
+        tablinks = document.getElementsByClassName("tab-link");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active-tab", "");
+        }
+
+        // Show current tab and add active class
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active-tab";
+    }
+</script>
+
+</body>
+</html>

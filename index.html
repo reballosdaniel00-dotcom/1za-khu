@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vault Gate</title>
+    <style>
+        body {
+            
+            background-image: url('pic1.png'); 
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+
+
+        body { font-family: sans-serif; text-align: center; padding-top: 100px; background-color: #f4f4f4; }
+        .gate-btn { 
+
+            padding: 15px 30px; font-size: 20px; cursor: pointer; 
+            background-color: #333; color: white; border: none; border-radius: 8px;
+        }
+        .gate-btn:hover { background-color: #555; }
+    </style>
+</head>
+<body>
+
+    <h1 style="-webkit-text-stroke: 1px rgb(0, 0, 0); color: rgb(255, 238, 0);"  >🔒  Safe Lock</h1>
+    <p style="font-weight: bold; color: yellow; text-shadow: #555; -webkit-text-stroke: 0.3px #000000;">This  is locked until <strong>April 12, 2026</strong>.</p>
+    
+    <!-- The user must press this button to try and unlock -->
+    <button class="gate-btn" onclick="tryUnlock()">OPEN</button>
+
+    <script>
+function tryUnlock() {
+    // 1. Set the exact target date and time (April 12, 2026, at Midnight)
+    const unlockDate = new Date("2026-04-10T00:00:00").getTime();
+    const now = new Date().getTime();
+
+    // 2. Calculate the difference
+    const timeLeft = unlockDate - now;
+
+        if (timeLeft <= 0) {
+            // SUCCESS: The time has passed
+            alert("🔓 Access Granted! Welcome to the main page.");
+            window.location.href = "main.html";
+            
+        } else {
+            // FAIL: Calculate exact days, hours, and minutes remaining
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+
+            // 3. Show the detailed pop-up
+            alert("🔒 WWEBSITE LOCKED\n\nRequirements not yet met. Please wait:\n" + 
+                days + " Day(s), " + 
+                hours + " Hour(s), and " + 
+                minutes + " Minute(s).");
+        }
+    }
+
+    </script>
+
+</body>
+</html>
